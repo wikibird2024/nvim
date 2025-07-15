@@ -1,0 +1,104 @@
+
+# ESP-IDF environment setup
+alias get_idf='. $HOME/esp/esp-idf/export.sh'   # Manual trigger
+. $HOME/esp/esp-idf/export.sh                   # Auto-run on terminal open
+
+# ===============================
+# System Shortcuts
+# ===============================
+alias c='clear'
+alias h='history'
+alias j='jobs'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# ===============================
+# File and Directory Navigation
+# ===============================
+alias ls='ls --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias lsd='ls -d */'           # List only directories
+
+# ===============================
+# Safer File Operations
+# ===============================
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# ===============================
+# Git Productivity
+# ===============================
+alias gs='git status'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate --all'
+alias gd='git diff'
+alias gco='git checkout'
+alias gb='git branch'
+
+# ===============================
+# Package Management (APT)
+# ===============================
+alias update='sudo apt update && sudo apt upgrade -y'
+alias install='sudo apt install'
+alias remove='sudo apt remove'
+alias search='apt search'
+alias autoremove='sudo apt autoremove -y'
+alias pclean='sudo apt clean && sudo apt autoclean'
+
+# ===============================
+# Network Utilities
+# ===============================
+alias myip="curl ifconfig.me"
+alias ports="netstat -tulanp"
+alias pingg='ping google.com'
+
+# ===============================
+# Bash & Dev Tools
+# ===============================
+alias v='nvim'
+alias grep='grep --color=auto'
+alias s='source ~/.bashrc'
+alias editbash='nvim ~/.bashrc'
+alias editalias='nvim ~/.bash_aliases'
+alias reloadalias='source ~/.bash_aliases'
+alias path='echo $PATH | tr ":" "\n"'
+
+# ===============================
+# Custom Dev Shortcuts
+# ===============================
+alias proj='cd ~/esp/mainproject'
+alias build='idf.py build'
+alias flash='idf.py -p /dev/ttyUSB0 flash monitor'
+
+# ===============================
+# Fun or Misc
+# ===============================
+alias please='sudo $(fc -ln -1)'  # Repeat last command with sudo
+alias duck='ddate'                # Discordian date (if installed)
+
+# ===============================
+# ESP-IDF 
+# ===============================
+# ESP-IDF Pro Workflow Aliases
+alias idf_b='idf.py build'
+alias idf_f='idf.py flash'
+alias idf_m='idf.py monitor'
+alias idf_c='idf.py fullclean'
+alias idf_bfm='idf.py build && idf.py flash && idf.py monitor'
+alias idf_all='idf.py fullclean && idf.py build && idf.py flash && idf.py monitor'
+alias idf_quick='idf.py -p /dev/ttyUSB0 build flash monitor'   # Fixed port (edit if needed)
+# =============================
+# TREE 
+# =============================
+#
+alias t1='tree -L 1 --dirsfirst --noreport'
+alias t2='tree -L 2 --dirsfirst --noreport'
+alias t3='tree -L 3 --dirsfirst --noreport'
+alias t4='tree -L 4 --dirsfirst --noreport'
+alias t5='tree -L 5 --dirsfirst --noreport'
