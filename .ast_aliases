@@ -1,3 +1,0 @@
-alias a_pjsip='sudo nvim /etc/asterisk/pjsip.conf'
-alias a_manager='sudo nvim /etc/asterisk/manager.conf'
-alias a_ext='sudo nvim /etc/asterisk/extensions.conf'
