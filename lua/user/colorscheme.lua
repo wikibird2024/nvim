@@ -1,5 +1,5 @@
 
-vim.g.tokyonight_style = "day"
+vim.g.tokyonight_style = "night"
 vim.cmd("colorscheme tokyonight")
 
 require("lualine").setup({
