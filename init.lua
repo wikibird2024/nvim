@@ -1,18 +1,30 @@
+
 -- ~/.config/nvim/init.lua
 
-require("user.options")
-require("user.keymaps")
-require("user.plugins")
+-- 1. Set leader key sớm
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Load after lazy (or inside plugin config if lazy uses `config`)
---require("user.colorscheme")
---require("user.bufferline")
---equire("user.nvimtree")
---require("user.telescope")
---require("user.treesitter")
---require("user.lsp")
---require("user.cmp")
---require("user.dap")
---require("user.git")
---require("user.terminal")
---require("user.formatter")
+-- 2. Load cấu hình core: options, keymaps, autocommands
+require("user.core")
+
+-- 3. Khởi động Lazy.nvim và load plugin từ user.plugins
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  print("Installing lazy.nvim ...")
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup("user.plugins")
+
+-- 4. Load utils, autocmd, v.v. nếu cần thêm
+-- (nếu đã gọi trong core thì không cần gọi lại)
+
