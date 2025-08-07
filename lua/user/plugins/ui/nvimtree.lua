@@ -1,21 +1,20 @@
 
--- user/plugins/ui/nvimtree.lua
 return {
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    "nvim-tree/nvim-tree.lua",                 -- Core plugin
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" }, -- Load on these commands
+    dependencies = { "nvim-tree/nvim-web-devicons" }, -- Optional: file icons
     config = function()
       require("nvim-tree").setup({
         view = {
-          width = 30,
-          side = "left",
+          width = 30,      -- Set sidebar width
+          side = "left",   -- Position on the left side
         },
         renderer = {
-          group_empty = true,
+          group_empty = true, -- Collapse empty folders into a single line
         },
         filters = {
-          dotfiles = false,
+          dotfiles = false,   -- Show hidden files (e.g. .gitignore)
         },
       })
     end,
